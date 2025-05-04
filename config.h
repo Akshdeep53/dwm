@@ -60,11 +60,15 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run","-c", "-i", "-l","10", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
+static const char *internetcmd[]  = { "brave", NULL };
+static const char *screenshotcmd[]  = { "flameshot","gui", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_f, spawn,          {.v = screenshotcmd} },
+	{ MODKEY|ShiftMask,             XK_i, spawn,          {.v = internetcmd} },
 	{ 0,				            XF86XK_AudioRaiseVolume, spawn,           SHCMD("bash /home/aksh/dwm/dwm_scripts/vol_inc.sh;pkill -RTMIN+11 dwmblocks")},
 	{ 0,				            XF86XK_AudioLowerVolume, spawn,           SHCMD("bash /home/aksh/dwm/dwm_scripts/vol_dec.sh;pkill -RTMIN+11 dwmblocks")},
 	{ 0,				            XF86XK_AudioMute,        spawn,			  SHCMD("bash /home/aksh/dwm/dwm_scripts/toggle_audio.sh;pkill -RTMIN+11 dwmblocks")},

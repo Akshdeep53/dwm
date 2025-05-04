@@ -5,7 +5,7 @@ static const Block blocks[] = {
 	{"Speicher: ", "free -h | awk '/^Speicher/ { print $3 }' | sed s/i//g",	30,		0},
 	{"","/home/aksh/dwm/dwmblocks/scripts/volume.sh", 0, 11},
 	{"", "date '+%b %d (%a) %I:%M%p'",					5,		0},
-//	{"Home: ", "TZ='Asia/Calcutta' date +'%I:%M%p'",					5,		0},
+	{"Home: ", "TZ='Asia/Calcutta' date +'%I:%M%p'",					5,		0},
 };
 
 //sets delimiter between status commands. NULL character ('\0') means no delimiter.
